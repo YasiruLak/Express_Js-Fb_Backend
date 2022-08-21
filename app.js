@@ -1,9 +1,8 @@
 const express = require('express')
 const mongoose = require('mongoose')
 
-// const customer = require('./routes/customer')
-// const user = require('./routes/user')
-const item = require('./routes/item')
+
+const item = require('./routes/user')
 
 const app = express()
 const port = 4000
@@ -19,10 +18,7 @@ con.on("open", () => {
 
 app.use(express.json())
 
-// app.use('/customer', customer)
-// app.use('/item',  item)
-// app.use('/users', user)
-app.use('/items', item)
+app.use('/user', user)
 
 
 // app.get('/', (req, res) => {

@@ -1,3 +1,9 @@
+export async function findByPasswordAndEmail(email,password) {
+    email = userSchema.email
+    password = userSchema.password
+
+}
+
 const mongoose = require('mongoose')
 
 const userSchema = new mongoose.Schema({

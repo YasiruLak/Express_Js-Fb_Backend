@@ -74,6 +74,14 @@ router.put('/:id', async (req, res) => {
     }
 })
 
+router.get('/login', async (req, res) => {
+    try {
+        const users = await User.findByPasswordAndEmail(req.params.email, req.params.password)
+        res.json(users)
+    } catch (err) {
+        res.send('Err: ' + err)
+    }
+})
 
 
 

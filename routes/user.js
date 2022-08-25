@@ -26,7 +26,6 @@ router.get('/:id', async (req, res) => {
 
 router.post('/', async (req, res) => {
     const users = new User({
-        userId: req.body.userId,
         firstName: req.body.firstName,
         surName: req.body.surName,
         gender: req.body.gender,
@@ -57,7 +56,6 @@ router.delete('/:id', async (req, res) => {
 router.put('/:id', async (req, res) => {
     try {
         const users = await User.findById(req.params.id)
-        users.userId = req.body.userId
         users.firstName = req.body.firstName
         users.surName = req.body.surName
         users.gender = req.body.gender
@@ -74,14 +72,28 @@ router.put('/:id', async (req, res) => {
     }
 })
 
-router.get('/login', async (req, res) => {
-    try {
-        const users = await User.findByPasswordAndEmail(req.params.email, req.params.password)
-        res.json(users)
-    } catch (err) {
-        res.send('Err: ' + err)
-    }
-})
+// router.get('/:email', async (req, res) => {
+//     try {
+//         const users = await User.findOne({email: req.params.email}, function (err, myUser){
+//             console.log("find email")
+//         })
+//         res.json(users)
+//         router.post(async (req, res) =>{
+//             const user = new User({
+//                 password: req.body.password,
+//                 email: req.body.email
+//             })
+//             try {
+//                 const response = await user.save()
+//                 res.json(response)
+//             } catch (err) {
+//                 res.send('Err: ' + err)
+//             }
+//         })
+//     } catch (err) {
+//         res.send('Err: ' + err)
+//     }
+// })
 
 
 

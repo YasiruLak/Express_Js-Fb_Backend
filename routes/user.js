@@ -72,41 +72,5 @@ router.put('/:id', async (req, res) => {
     }
 })
 
-// router.get('/:email', async (req, res) => {
-//     try {
-//         const users = await User.findOne({email: req.params.email}, function (err, myUser){
-//             console.log("find email")
-//         })
-//         res.json(users)
-//         router.post(async (req, res) =>{
-//             const user = new User({
-//                 password: req.body.password,
-//                 email: req.body.email
-//             })
-//             try {
-//                 const response = await user.save()
-//                 res.json(response)
-//             } catch (err) {
-//                 res.send('Err: ' + err)
-//             }
-//         })
-//     } catch (err) {
-//         res.send('Err: ' + err)
-//     }
-// })
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 module.exports = router
